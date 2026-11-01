@@ -7027,8 +7027,6 @@ MonoBehaviour:
   tickPeroidInSeconds: 1
   tickTimer: 0
   temperatureStartValue: 300
-  minAllowedTemperature: 100
-  maxAllowedTemperature: 100
   temperatureDeltaPerFullCoolantRPerSecond: -20
   temperatureDeltaPerFullCoolantGPerSecond: -20
   temperatureDeltaPerFullCoolantBPerSecond: -20

@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class Reactor : MonoBehaviour
 {
+    [Header("Readonly - for debugging")]
     [SerializeField] float tickPeroidInSeconds;
     [SerializeField] float tickTimer = 0f;
 
@@ -18,8 +19,8 @@ public class Reactor : MonoBehaviour
     [Header("Reactor parameters values - Game Designers/Balancers welcome")]
     [Header("Temperature")]
     [SerializeField] float temperatureStartValue = 300f;
-    [SerializeField] float minAllowedTemperature = 100f;
-    [SerializeField] float maxAllowedTemperature = 100f;
+    //[SerializeField] float minAllowedTemperature = 100f;
+    //[SerializeField] float maxAllowedTemperature = 100f;
     [SerializeField] float temperatureDeltaPerFullCoolantRPerSecond = -20f;
     [SerializeField] float temperatureDeltaPerFullCoolantGPerSecond = -20f;
     [SerializeField] float temperatureDeltaPerFullCoolantBPerSecond = -20f;
@@ -81,13 +82,8 @@ public class Reactor : MonoBehaviour
 
         tickPeroidInSeconds = LogicConstants.tickPeroidInSeconds;
 
-        // Get references to all control panels
+        //Get references to all control panels
         controlPanels = new List<IParameterControlPanel>();
-        var theInterface = typeof(IParameterControlPanel);
-        var types = AppDomain.CurrentDomain.GetAssemblies() // Get all assemblies
-            .SelectMany(a => a.GetTypes()) // Get all types from all assemblies
-            .Where(t => theInterface.IsAssignableFrom(t)); // Search for types that implement the interface
-
         var allGameObjects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IParameterControlPanel>();
         foreach(IParameterControlPanel cp in allGameObjects)
         {
@@ -217,8 +213,6 @@ public class Reactor : MonoBehaviour
         {
             if(parameter.HasFailed())
             {
-                // TODO trigger failstate
-                // loss of control + animations + whatever
                 gameplayManager.HandleGameLoss(parameter.Type, parameter.WasTooHigh());
             }
         }
