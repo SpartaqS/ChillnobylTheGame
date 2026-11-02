@@ -27,7 +27,7 @@ public class Reactor : MonoBehaviour
     [SerializeField] List<float> temperatureTresholds;
     
 
-[Header("Coolant")]
+    [Header("Coolant")]
     [SerializeField] [Range(LogicConstants.minCoolantColorAmount, LogicConstants.maxCoolantColorAmount)] 
     float coolantRStartValue = 32f;
     [SerializeField] [Range(LogicConstants.minCoolantColorAmount, LogicConstants.maxCoolantColorAmount)] 

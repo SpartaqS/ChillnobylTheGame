@@ -7,9 +7,9 @@ public class Temperature : ReactorParameter
 {
     readonly float minAllowedValue = 100f; // BALANCEPARAM
     readonly float maxAllowedValue = 1000f; // BALANCEPARAM
-    readonly float coolantRDeltaPer100DPerSecond = -1f; // BALANCEPARAM
-    readonly float coolantGDeltaPer100DPerSecond = -1f; // BALANCEPARAM
-    readonly float coolantBDeltaPer100DPerSecond = -1f; // BALANCEPARAM
+    readonly float coolantRDeltaPer100DPerSecond = -1f;
+    readonly float coolantGDeltaPer100DPerSecond = -1f;
+    readonly float coolantBDeltaPer100DPerSecond = -1f;
 
     public Temperature(UnityAction<ReactorParameterType, int> intervalReachHandler, Vector3 coolantDeltaPer100DPerSecond, float? value = null, Func<float> defaultDeltaFunc = null, Func<bool> hasFailed = null, List<ParameterInfluence> influencedParameters = null, List<float> stateTresholds = null) : base(type: ReactorParameterType.Temperature, intervalReachHandler, value, stateTresholds)
     {

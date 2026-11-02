@@ -13,12 +13,12 @@ public class VFXController : MonoBehaviour
         if (reactor != null)
         {
             reactor.OnParameterReachInterval.AddListener(HandleParameterReachInterval);
-            Debug.Log($"{gameObject.name} has conencted to a Reactor's OnParameterReachInterval event");
+            Debug.Log($"{gameObject.name} has connected to a Reactor's OnParameterReachInterval event");
         }
         else
             Debug.LogWarning($"{gameObject.name} has not found a Reactor to connect to its OnParameterReachInterval event!");
 
-        gameObject.SetActive(false); // by default disable
+        vfxObject.SetActive(false); // by default disable
     }
 
     private void HandleParameterReachInterval(ReactorParameterType type, int newState)
@@ -33,13 +33,13 @@ public class VFXController : MonoBehaviour
             {
                 if (!vfxObject.gameObject.activeSelf) // object is not currently active
                     vfxObject.SetActive(true);
-                Debug.Log($"vfx ON: {gameObject.name}");
+                //Debug.Log($"vfx ON: {gameObject.name}");
                 return;
             }
         }
 
-        // parameter in state which does not need this vfx -> hide the fvx object
-        Debug.Log($"vfx OFF: {gameObject.name}");
+        // parameter is in state which does not warrant visibility of this vfx -> hide the vfx object
+        //Debug.Log($"vfx OFF: {gameObject.name}");
         vfxObject.SetActive(false);
     }
 
