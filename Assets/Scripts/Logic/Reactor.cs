@@ -15,7 +15,8 @@ public class Reactor : MonoBehaviour
     [SerializeField] List<IParameterControlPanel> controlPanels;
     // TODO?
     //OnFail <reason>
-
+    [SerializeField] float reactorUptime = 0f;
+    public float GetCurrentTime() {  return reactorUptime; }
     [Header("Reactor parameters values - Game Designers/Balancers welcome")]
     [Header("Temperature")]
     [SerializeField] float temperatureStartValue = 300f;
@@ -130,6 +131,7 @@ public class Reactor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        reactorUptime += Time.deltaTime;
         tickTimer += Time.deltaTime;
         if (tickTimer > tickPeroidInSeconds)
         {
