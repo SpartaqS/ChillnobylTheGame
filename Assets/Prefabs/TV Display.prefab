@@ -110,10 +110,10 @@ MonoBehaviour:
   mainText: {fileID: 2879066363862726259}
   mainTextColor: {r: 1, g: 1, b: 1, a: 1}
   showMinText: 0
-  minText: {fileID: 600283239323157912}
+  minText: {fileID: 1882747009061014968}
   minTextColor: {r: 1, g: 1, b: 1, a: 1}
   showMaxText: 0
-  maxText: {fileID: 1882747009061014968}
+  maxText: {fileID: 600283239323157912}
   maxTextColor: {r: 1, g: 1, b: 1, a: 1}
   addedAtEnd: 
 --- !u!1 &3343594889631611737
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 7225674858177199096}
   - component: {fileID: 600283239323157912}
   m_Layer: 0
-  m_Name: Min Text (TMP)
+  m_Name: Max Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 8880368754738099432}
   - component: {fileID: 1882747009061014968}
   m_Layer: 0
-  m_Name: Max Text (TMP)
+  m_Name: Min Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

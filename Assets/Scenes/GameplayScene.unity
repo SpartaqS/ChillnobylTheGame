@@ -4801,7 +4801,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 368454247606725964, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: m_Name
-      value: TV Display (b) (1)
+      value: TV Display (g)
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: addedAtEnd
@@ -5123,23 +5123,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: maxTextColor.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: maxTextColor.r
-      value: 0.32651007
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: minTextColor.b
-      value: 0
+      value: 0.6877041
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: minTextColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: minTextColor.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: mainTextColor.b
