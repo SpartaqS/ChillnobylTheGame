@@ -30,7 +30,7 @@ public class ParameterTV : MonoBehaviour
         ReactorParameter parameter = reactor.GetParameter(parameterType);
 
         mainText.text = parameter.Value.ToString("0.00") + addedAtEnd;
-        minText.text = showMinText ? parameter.MinValue.ToString("0.00") : "";
-        maxText.text = showMaxText ? parameter.MaxValue.ToString("0.00") : "";
+        minText.text = showMinText ? parameter.MinValue.ToString("0.00") + addedAtEnd : "";
+        maxText.text = showMaxText ? parameter.MaxValue.ToString("0.00") + addedAtEnd : "";
     }
 }

@@ -3887,7 +3887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: addedAtEnd
-      value: 
+      value: u
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: showMaxText
@@ -4805,7 +4805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: addedAtEnd
-      value: 
+      value: u
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: showMaxText
@@ -5106,6 +5106,10 @@ PrefabInstance:
       value: TV Display
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
+      propertyPath: addedAtEnd
+      value: "\xB0C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: showMaxText
       value: 1
       objectReference: {fileID: 0}
@@ -5386,7 +5390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: addedAtEnd
-      value: 
+      value: u
       objectReference: {fileID: 0}
     - target: {fileID: 557539931544691986, guid: 11827b308226ab5499dc1d857d1736ca, type: 3}
       propertyPath: showMaxText
@@ -7024,6 +7028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d06f9dd0fe67a714cbd4fbf78920b923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Reactor
+  reactorUptime: 0
   tickPeroidInSeconds: 1
   tickTimer: 0
   temperatureStartValue: 300
