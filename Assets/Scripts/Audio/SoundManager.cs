@@ -12,7 +12,8 @@ public class SoundManager : MonoBehaviour
         ButtonDown,
         ButtonUp,
         ChillFaucet,
-        Alarm
+        Alarm,
+        Cuckoo
     }
 
     public static SoundManager _Instance = null;

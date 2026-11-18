@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class GameplayManager : MonoBehaviour
 {
     [SerializeField] LossScreen lossScreen;
+    [SerializeField] LossScreen winScreen;
     bool isGameOver = false;
     [SerializeField] Reactor reactor;
     [SerializeField] GameObject pressToStartScreen;
@@ -11,16 +12,15 @@ public class GameplayManager : MonoBehaviour
 
     private void Awake()
     {
+        loadingScreen.SetActive(true);
         lossScreen.SetVisibility(false);
+        winScreen.SetVisibility(false);
         reactor = FindFirstObjectByType<Reactor>();
         if (pressToStartScreen == null)
             throw new System.Exception("Missing pressToStartScreen");
 
         if (loadingScreen == null)
             throw new System.Exception("Missing loadingScreen");
-
-
-        loadingScreen.SetActive(true);
         pressToStartScreen.SetActive(false);
     }
 
@@ -66,6 +66,22 @@ public class GameplayManager : MonoBehaviour
 
         lossScreen.SetText(lossReasonText);
         lossScreen.SetVisibility(true);
+    }
+
+    public void HandleGameWin()
+    {
+        if (isGameOver)
+            // ignore repeated victory signals (first wins)
+            return;
+
+        isGameOver = true;
+        enabled = false;
+        reactor.enabled = false;
+
+        Debug.LogWarning($"Debug msg: Victory by time (master engineer, you survived!)");
+
+        // not setting los screen as it is configured in the Inspector
+        winScreen.SetVisibility(true);
     }
 
 

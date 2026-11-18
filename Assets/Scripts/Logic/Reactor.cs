@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(ReactorUptime))]
 public class Reactor : MonoBehaviour
 {
     [Header("Readonly - for debugging")]
@@ -15,8 +16,8 @@ public class Reactor : MonoBehaviour
     [SerializeField] List<IParameterControlPanel> controlPanels;
     // TODO?
     //OnFail <reason>
-    [SerializeField] float reactorUptime = 0f;
-    public float GetCurrentTime() {  return reactorUptime; }
+    ReactorUptime reactorUptime;
+    public float GetCurrentTime() {  return reactorUptime.GetTime(); }
     [Header("Reactor parameters values - Game Designers/Balancers welcome")]
     [Header("Temperature")]
     [SerializeField] float temperatureStartValue = 300f;
@@ -78,6 +79,7 @@ public class Reactor : MonoBehaviour
 
     private void Awake()
     {
+        reactorUptime = GetComponent<ReactorUptime>();
         // Initialize all event connections
         gameplayManager = FindFirstObjectByType<GameplayManager>();
 
@@ -124,14 +126,14 @@ public class Reactor : MonoBehaviour
     {
         // Initialize Parameters and their relationships (and call eny events related to state reaching)
         InitializeReactorParameters();
-        DebugPrintParameters();
+        //DebugPrintParameters();
         tickTimer = 0f;
         enabled = false; // so game does not start until player is ready
     }
     // Update is called once per frame
     void Update()
     {
-        reactorUptime += Time.deltaTime;
+        reactorUptime.AddTimeDelta(Time.deltaTime);
         tickTimer += Time.deltaTime;
         if (tickTimer > tickPeroidInSeconds)
         {
@@ -144,7 +146,7 @@ public class Reactor : MonoBehaviour
     {
         ComputeParameters();
         CheckForFailure();
-        DebugPrintParameters();
+        //DebugPrintParameters();
     }
 
 
@@ -194,7 +196,7 @@ public class Reactor : MonoBehaviour
             {
                 if(reactorParameter.Type == parameterType)
                 {
-                    Debug.Log($"Applying delta {sum} to {parameterType}");
+                    //Debug.Log($"Applying delta {sum} to {parameterType}");
                     reactorParameter.ApplyDelta(sum);
                     break;// should be only one parameter of each type
                 }
@@ -204,7 +206,7 @@ public class Reactor : MonoBehaviour
 
     private void HandleParameterReachInterval(ReactorParameterType type, int newState)
     {
-        Debug.Log($"Parameter: {type.ToString()} reached state: {newState}");
+        //Debug.Log($"Parameter: {type.ToString()} reached state: {newState}");
         OnParameterReachInterval?.Invoke(type, newState);
     }
 
